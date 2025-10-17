@@ -1,0 +1,316 @@
+/* style.css — MSN Messenger / AOL / Windows XP (2002–2005-inspirert) */
+
+body {
+  font-family: "Trebuchet MS", "Tahoma", sans-serif;
+  background: linear-gradient(to bottom right, #d8ecff, #eaf6ff);
+  color: #1b1b1b;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+}
+
+/* === Container === */
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  background: #ffffff;
+  border: 1px solid #aac8f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 30px;
+}
+
+/* === Header === */
+header {
+  text-align: center;
+  background: linear-gradient(to right, #cfe8ff, #b5d9ff);
+  border-radius: 12px;
+  padding: 15px 10px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  color: #336699;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* === Navigasjon === */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  background: linear-gradient(to bottom, #f2f8ff, #c7e0ff);
+  border: 1px solid #7da9e8;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  color: #004488;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease-in-out;
+}
+
+nav a:hover {
+  background: linear-gradient(to bottom, #e0f0ff, #a7cfff);
+  border-color: #558adf;
+  transform: translateY(-1px);
+}
+
+/* === Seksjoner === */
+main section {
+  margin-bottom: 25px;
+}
+
+/* Seksjonsoverskrifter */
+h2 {
+  color: #004c99;
+  background: linear-gradient(to right, #f2f7ff, #e1efff);
+  border-left: 4px solid #79b0ff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 1.3em;
+}
+
+/* === Chat-bobler === */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background: #e9f3ff;
+  border: 1px solid #b8d4ff;
+  border-radius: 16px 16px 16px 4px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  max-width: 80%;
+}
+
+li:nth-child(even) {
+  background: #f4faff;
+  border-radius: 16px 16px 4px 16px;
+  margin-left: auto;
+}
+
+li b {
+  color: #004488;
+}
+
+li i {
+  color: #0066cc;
+}
+
+/* === GIF og tekst === */
+.gif-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.retro-gif {
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #99ccee;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  max-width: 280px;
+}
+
+.gif-caption {
+  text-align: center;
+  color: #336699;
+  font-style: italic;
+  margin-top: 8px;
+  font-size: 1em;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  color: #555;
+  font-size: 0.9em;
+  border-top: 1px solid #cce0f5;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === Blinkeffekt (retro touch) === */
+.blink {
+  animation: blink 1.2s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* === Marquee-tekst === */
+.marquee-text {
+  color: #004c99;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* === Musikk-side / Album-galleri === */
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #f8fbff, #eef5ff);
+  border: 1px solid #bcd4f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 10px;
+  width: 100%;
+  max-width: 240px;
+  transition: transform 0.15s ease-in-out;
+}
+
+.album:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.album img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #99ccee;
+  object-fit: cover;
+  /* Litt tilfeldig variasjon i høyde */
+  height: calc(200px + (20px * var(--hvar)));
+}
+
+.album p {
+  margin-top: 8px;
+  font-size: 0.95em;
+  text-align: center;
+  color: #003366;
+  font-weight: bold;
+}
+
+/* === Musikk-side / Album-galleri (med glassaktig XP-glow) === */
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  justify-items: center;
+  margin-top: 25px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #f8fbff, #e8f2ff);
+  border: 1px solid #bcd4f7;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08), inset 0 1px 0 #ffffff;
+  padding: 10px;
+  width: 100%;
+  max-width: 240px;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.album:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Selve albumcoveret */
+.album img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #99ccee;
+  object-fit: cover;
+  height: calc(200px + (20px * var(--hvar)));
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Glans-overlay (XP-glow) */
+.album::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.15)
+  );
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Glansen blir litt sterkere ved hover */
+.album:hover::before {
+  opacity: 1;
+}
+
+/* Reflektert “XP-glow” under kanten */
+.album::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* Tekst under album */
+.album p {
+  margin-top: 10px;
+  font-size: 0.95em;
+  text-align: center;
+  color: #003366;
+  font-weight: bold;
+}
