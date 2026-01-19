@@ -1,0 +1,37 @@
+/* Fjern standard margin */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Bakgrunn for hele siden */
+body {
+    background-image: url("NettsideBakgrunn.png");
+    background-size: cover;       /* Fyller hele skjermen */
+    background-position: center;  /* Sentrert */
+    background-repeat: no-repeat;
+}
+
+/* Logo i topp-midten */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px; /* Juster avstand fra toppen */
+    perspective: 800px;
+}
+
+.logo-container img {
+    width: 40vw;      /* 40% av vindusbredden */
+    max-width: 400px;
+    height: auto;
+}
+
+#logo {
+    width: 400px;
+    height: auto;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
