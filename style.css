@@ -7,10 +7,62 @@ html, body {
 
 /* Bakgrunn for hele siden */
 body {
-    background-image: url("NettsideBakgrunn.png");
-    background-size: cover;       /* Fyller hele skjermen */
-    background-position: center;  /* Sentrert */
+    background-color: #9fd1f2;
+    overflow: hidden;
+}
+
+/* Sammensatt bakgrunn */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.background__layer {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+}
+
+.background__layer--base {
+    background-image: url("Bakgrunn.png");
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background__layer--clouds {
+    background-image: url("Skyer.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.9;
+    animation: clouds-drift 60s linear infinite;
+}
+
+.background__layer--grass {
+    background-image: url("Gress.png");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+@keyframes clouds-drift {
+    0% {
+        background-position: 0 10%;
+    }
+    100% {
+        background-position: -2000px 10%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background__layer--clouds {
+        animation: none;
+    }
 }
 
 /* Logo i topp-midten */
@@ -20,6 +72,8 @@ body {
     align-items: flex-start;
     padding-top: 20px; /* Juster avstand fra toppen */
     perspective: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 .logo-container img {
